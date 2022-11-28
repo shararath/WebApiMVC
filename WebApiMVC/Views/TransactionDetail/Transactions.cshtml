@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Transactions";
+}
+
+<div align="center">
+    <br /><br />
+    <table cellpadding="2"
+           class="table"
+           cellspacing="2"
+           border="1">
+        <tr class="btn-primary">
+
+            <th>
+                TransactionId
+            </th>
+            <th> GPID</th>
+            <th> TransactionDate</th>
+            <th> Amount</th>
+            <th> Status</th>
+        </tr>
+        @foreach (var Cust in ViewBag.listTransactions)
+        {
+            <tr class="btn-success">
+                <td>
+                    @Cust.TransactionId
+                </td>
+                <td>
+                    @Cust.GPID
+                </td>
+                <td>
+                    @Cust.TransactionDate.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Cust.Amount
+                </td>
+                <td>
+                    @Cust.Status
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

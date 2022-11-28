@@ -1,0 +1,67 @@
+﻿@model WebApiMVC.ViewModel.CustomerViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div align = "center" >
+@using (Html.BeginForm("create", "Customer", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.customer.Name)
+            </td>
+
+            <td>
+                @Html.TextBoxFor(model => model.customer.Name, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.customer.Address)
+            </td>
+
+            <td>
+                @Html.TextBoxFor(model => model.customer.Address, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.customer.MobileNo)
+            </td>
+
+            <td>
+                @Html.TextBoxFor(model => model.customer.MobileNo, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.customer.ExpiryDate)
+            </td>
+
+            <td>
+                @Html.TextBoxFor(model => model.customer.ExpiryDate, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.customer.CVV)
+            </td>
+
+            <td>
+                @Html.TextBoxFor(model => model.customer.CVV, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+
+            <td>
+                <input type="submit"  value="Save" />
+            </td>
+        </tr>
+    </table>
+}
+    </div>

@@ -1,0 +1,60 @@
+﻿@model WebApiMVC.ViewModel.TransactionDetailViewModel
+
+@{
+    ViewBag.Title = "CreateTransaction";
+}
+
+<h2>Shopping Cart</h2>
+
+<div align="center">
+    @using (Html.BeginForm("CreateTransaction", "TransactionDetail", FormMethod.Post))
+    {
+        <table class="table">
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.transactions.GPID)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.transactions.GPID, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.transactions.Amount)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.transactions.Amount,
+                            new { @class = "form-control", id = "amount", placeholder = "0" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.transactions.TransactionDate)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.transactions.TransactionDate, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.transactions.Status)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.transactions.Status, new {@class="form-control", @Value="In Progress" })
+                    
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+
+                <td>
+                    <input type="submit" value="Make Payment" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>

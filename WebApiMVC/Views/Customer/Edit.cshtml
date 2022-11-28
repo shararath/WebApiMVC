@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@model WebApiMVC.ViewModel.CustomerViewModel
+
+<h2> Edit </h2>
+<div align="center" width="500px">
+    @using (Html.BeginForm("Edit", "Customer", FormMethod.Post))
+    {
+        <table class="table"
+               width="400px"
+               cellpadding="20">
+            <tr class="btn-default">
+                <td>
+                    @Html.LabelFor(model => model.customer.Name)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.customer.Name, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.customer.Address)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.customer.Address, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.customer.MobileNo)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.customer.MobileNo, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.customer.ExpiryDate)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.customer.ExpiryDate, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.customer.CVV)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.customer.CVV, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+
+                <td>
+                    <input type="submit" value="Save" /> &nbsp; <a class="btn-primary" href="@Url.Action("Index ","Customer ")"> Back </a>
+                    @Html.HiddenFor(model => model.customer.GPID)
+                </td>
+            </tr>
+        </table>
+    }
+</div>

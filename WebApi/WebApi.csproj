@@ -253,6 +253,8 @@
     <Content Include="DB\Globalpay_log.ldf">
       <DependentUpon>Globalpay.mdf</DependentUpon>
     </Content>
+    <Content Include="DB\Scripts\TextFile1.txt" />
+    <Content Include="DB\Scripts\TextFile2.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
